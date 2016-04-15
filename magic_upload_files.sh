@@ -9,6 +9,10 @@ source cliqz_env.sh
 cd $SRC_BASE
 cd $OBJ_DIR
 
+echo '***** Generate MAR for DE, if needed *****'
+if [ $CQZ_BUILD_LOCALIZATION ]; then
+  $MAKE -C ./tools/update-packaging full-update AB_CD=de
+fi
 echo '***** Packaging MAR *****'
 $MAKE update-packaging
 
