@@ -36,8 +36,10 @@ full-update:: complete-patch
 ifeq ($(OS_TARGET), WINNT)
 MOZ_PKG_FORMAT	:= SFX7Z
 UNPACKAGE	= '$(subst $(DIST),$(_ABS_DIST),$(INSTALLER_PACKAGE))'
+ifdef 0
 ifdef AB_CD
 UNPACKAGE	= '$(PACKAGE_BASE_DIR)/$(PACKAGE)'
+endif
 endif
 endif
 
